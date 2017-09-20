@@ -1,18 +1,18 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function () { //call function with button
       document.getElementById("calculate").addEventListener('click', calc);      
 });
-function calc() {
+function calc() { //take text inside text box and calculate
 	var num_cel = document.getElementById("celsius").value;
 	var num_fahr = celsiusToFahrenheit(num_cel);
 	var text_fahr = num_fahr + " degrees Fahrenheit";
 	document.getElementById("f").innerHTML = text_fahr;
 }
-function celsiusToFahrenheit(celsius) {
+function celsiusToFahrenheit(celsius) { //method used for calculating celcius from farenheit
 	var fahrenheit = (1.8*celsius)+32;
 	return fahrenheit;
 }
-document.addEventListener('DOMContentLoaded', function () {
-      document.getElementById("calculate").addEventListener('click', convertPage);    
+document.addEventListener('DOMContentLoaded', function () { //call function for convert with button
+      document.getElementById("convert").addEventListener('click', convertPage);    
 });
 function convertPage() {
 	//somehow convert page to string
@@ -20,17 +20,17 @@ function convertPage() {
 	var page_array = page_string.split(" ");
 	var ar_length = page_array.length();
 	var i = 0;
-	while (i<ar_length) {
+	while (i<ar_length) { //loop to find celciuses
 		var current_string = page_array[i];
-		if (current_string == "celsius") {
+		if (current_string == "celsius") { //if celcius found
 			var num_at = i-1;
 			var num = page_array[num_at];
-			var fah = celsiusToFahrenheit(num);
+			var fah = celsiusToFahrenheit(num); //convert to f
 			page_array[i] = "Fahrenheit";
-			page_array[num_at] = fah;
+			page_array[num_at] = fah; //put it in array
 		}
 		i+=1;
 	}
-	var new_page_string = page_array.join(" ");
+	var new_page_string = page_array.join(" "); //put the array back into a string
 	window.alert(new_page_string); //not working
 }
