@@ -18,7 +18,7 @@ function convertPage() {
 	//somehow convert page to string
 	var page_string = 'apple banana 5 celsius 3 6 8'; //GET PAGE TEXT
 	var page_array = page_string.split(" ");
-	var ar_length = page_array.length();
+	var ar_length = page_array.length(); //window alert works above, not below
 	var i = 0;
 	while (i<ar_length) { //loop to find celciuses
 		var current_string = page_array[i];
