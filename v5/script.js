@@ -26,6 +26,7 @@ function convertPage() {
 			var num_at = i-1;
 			var num = page_array[num_at];
 			var fah = celsiusToFahrenheit(num);
+			page_array[i] = "Celsius";
 			page_array[num_at] = fah;
 		}
 		i+=1;
